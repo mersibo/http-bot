@@ -11,7 +11,7 @@ logging.getLogger().setLevel(logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-settings = TGBotSettings()  # type: ignore[call-arg]
+settings = TGBotSettings()  
 
 client = TelegramClient("bot_session", settings.api_id, settings.api_hash).start(
     bot_token=settings.token,
@@ -33,8 +33,6 @@ async def main() -> None:
             asyncio.create_task(dummy_func()),
         )
 
-
-# Run the event loop to start receiving messages
 logger.info("Run the event loop to start receiving messages")
 
 with client:
